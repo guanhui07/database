@@ -1,0 +1,24 @@
+{
+  "name": "guanhui07/database",
+  "description": "The Swoole Pool Database package.",
+  "license": "MIT",
+  "keywords": [
+    "Laravel",
+    "Swoole",
+    "Databses",
+    "Sql",
+    "ORM"
+  ],
+  "require": {
+    "illuminate/database": "^8.0",
+    "symfony/console": "^5.1"
+  },
+  "require-dev": {
+    "swoole/ide-helper": "@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "guanhui07\\SwooleDatabase\\": "src/"
+    }
+  }
+}
