@@ -1,7 +1,7 @@
 ### 基于Swoole 封装的`连接池`以及适配了`illuminate/database`
 ###### 目前基于PDO规范 支持MySQL，SQL Server，Postgres和SQLite。
 
-#### 1. 引用本包
+#### 1. 安装
 ```
 composer require guanhui07/database:dev-master
 ```
