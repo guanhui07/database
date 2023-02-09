@@ -10,6 +10,7 @@
     "ORM"
   ],
   "require": {
+    "php": ">=7.4.0",
     "illuminate/database": "^8.0",
     "symfony/console": "^5.1",
     "ext-pdo": "*"
