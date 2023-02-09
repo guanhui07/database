@@ -1,23 +1,23 @@
 <?php
 
 
-namespace guanhui07\SwooleDatabase\Adapter;
+namespace Guanhui07\SwooleDatabase\Adapter;
 
 use Illuminate\Database\Connection;
 use InvalidArgumentException;
-use guanhui07\SwooleDatabase\Adapter\Connectors\MySqlConnection;
-use guanhui07\SwooleDatabase\Adapter\Connectors\PostgresConnection;
-use guanhui07\SwooleDatabase\Adapter\Connectors\SQLiteConnection;
-use guanhui07\SwooleDatabase\Adapter\Connectors\SqlServerConnection;
-use guanhui07\SwooleDatabase\PDOConfig;
-use guanhui07\SwooleDatabase\PoolManager;
-use guanhui07\SwooleDatabase\Utils\Context;
+use Guanhui07\SwooleDatabase\Adapter\Connectors\MySqlConnection;
+use Guanhui07\SwooleDatabase\Adapter\Connectors\PostgresConnection;
+use Guanhui07\SwooleDatabase\Adapter\Connectors\SQLiteConnection;
+use Guanhui07\SwooleDatabase\Adapter\Connectors\SqlServerConnection;
+use Guanhui07\SwooleDatabase\PDOConfig;
+use Guanhui07\SwooleDatabase\PoolManager;
+use Guanhui07\SwooleDatabase\Utils\Context;
 use Swoole\Coroutine;
 
 /**
  * 链接工厂类
  * Class ConnectionFactory
- * @package guanhui07\SwooleDatabase\Adapter
+ * @package Guanhui07\SwooleDatabase\Adapter
  */
 class ConnectionFactory
 {

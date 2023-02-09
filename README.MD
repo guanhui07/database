@@ -10,7 +10,7 @@ composer require guanhui07/database:dev-master
 /**
  * 创建配置
  */
-(new \guanhui07\SwooleDatabase\PDOConfig())->
+(new \Guanhui07\SwooleDatabase\PDOConfig())->
 withDriver('mysql')-> // 驱动类型
 withHost('127.0.0.1')-> // 主机地址
 withDbname('test')-> // 数据库名
@@ -21,7 +21,7 @@ setConfig('default'); // 设置全局访问(默认为default)
 ```
 #### 3. 设置
 ```php
-\guanhui07\SwooleDatabase\PoolManager::addPool(64,'default'); // 设置指定连接池尺寸(连接名称默认为 default)
+\Guanhui07\SwooleDatabase\PoolManager::addPool(64,'default'); // 设置指定连接池尺寸(连接名称默认为 default)
 ```
 
 #### 4. 使用协程环境模拟Swoole 的任务执行
@@ -47,7 +47,7 @@ $s = microtime(true);
             /**
              * 创建表
              */
-//            \guanhui07\SwooleDatabase\Manager::schema()->create('test',function(\Illuminate\Database\Schema\Blueprint $table){
+//            \Guanhui07\SwooleDatabase\Manager::schema()->create('test',function(\Illuminate\Database\Schema\Blueprint $table){
 //                $table->increments('id');
 //                $table->string('name')->nullable()->default(1);
 //                $table->timestamps();
@@ -55,11 +55,11 @@ $s = microtime(true);
             /**
              * 模型查询
              */
-//            $lists = \guanhui07\SwooleDatabase\Model::query()->first();
+//            $lists = \Guanhui07\SwooleDatabase\Model::query()->first();
             /**
              * Connection 直接查询
              */
-            $lists = \guanhui07\SwooleDatabase\Adapter\Manager::table('bd_live_plan')->first();
+            $lists = \Guanhui07\SwooleDatabase\Adapter\Manager::table('bd_live_plan')->first();
             var_dump(boolval($lists));
             /**
              * 协程销毁会自动归还连接(不需要手动处理)
@@ -73,7 +73,7 @@ echo '所有任务用了:' . (microtime(true) - $s) . '秒';
 ### model  用法和laravel orm 一致
 
 ```php
-class UserModel extends \guanhui07\SwooleDatabase\Adapter\Model
+class UserModel extends \Guanhui07\SwooleDatabase\Adapter\Model
 {
     protected $table = 'user';
 
@@ -82,7 +82,7 @@ class UserModel extends \guanhui07\SwooleDatabase\Adapter\Model
 
 ## 类laravel orm DB
 ```php
-use guanhui07\SwooleDatabase\Adapter\Manager as DB ;
+use Guanhui07\SwooleDatabase\Adapter\Manager as DB ;
 
 $test = DB::table('user')->where('id', '>', 1)
     ->orderBy('id', 'desc')->limit(2)->get(['id']);

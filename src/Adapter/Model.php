@@ -1,10 +1,10 @@
 <?php
 
-namespace guanhui07\SwooleDatabase\Adapter;
+namespace Guanhui07\SwooleDatabase\Adapter;
 /**
  * 模型基类
  * Class Model
- * @package guanhui07\SwooleDatabase\Adapter
+ * @package Guanhui07\SwooleDatabase\Adapter
  */
 class Model extends \Illuminate\Database\Eloquent\Model
 {

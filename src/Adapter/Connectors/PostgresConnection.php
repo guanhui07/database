@@ -1,11 +1,11 @@
 <?php
 
 
-namespace guanhui07\SwooleDatabase\Adapter\Connectors;
+namespace Guanhui07\SwooleDatabase\Adapter\Connectors;
 
 /**
  * Class PostgresConnection
- * @package guanhui07\SwooleDatabase\Adapter\Connectors
+ * @package Guanhui07\SwooleDatabase\Adapter\Connectors
  */
 class PostgresConnection extends \Illuminate\Database\PostgresConnection
 {

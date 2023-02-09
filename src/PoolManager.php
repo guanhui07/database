@@ -1,13 +1,13 @@
 <?php
 
 
-namespace guanhui07\SwooleDatabase;
+namespace Guanhui07\SwooleDatabase;
 
 
 /**
  * 连接池管理(全局)
  * Class PoolManager
- * @package guanhui07\SwooleDatabase
+ * @package Guanhui07\SwooleDatabase
  */
 class PoolManager
 {
@@ -48,9 +48,9 @@ class PoolManager
      */
     public static function recoveryConnection()
     {
-        $lists = \guanhui07\SwooleDatabase\Utils\Context::get(\guanhui07\SwooleDatabase\PoolManager::class . '_connection') === null ? [] : \guanhui07\SwooleDatabase\Utils\Context::get(\guanhui07\SwooleDatabase\PoolManager::class . '_connection');
+        $lists = \Guanhui07\SwooleDatabase\Utils\Context::get(\Guanhui07\SwooleDatabase\PoolManager::class . '_connection') === null ? [] : \Guanhui07\SwooleDatabase\Utils\Context::get(\Guanhui07\SwooleDatabase\PoolManager::class . '_connection');
         foreach ($lists as $item) {
-            \guanhui07\SwooleDatabase\PoolManager::getPool($item['name'])->put($item['pdo']);
+            \Guanhui07\SwooleDatabase\PoolManager::getPool($item['name'])->put($item['pdo']);
         }
     }
 }

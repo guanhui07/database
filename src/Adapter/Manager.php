@@ -1,15 +1,15 @@
 <?php
 
 
-namespace guanhui07\SwooleDatabase\Adapter;
+namespace Guanhui07\SwooleDatabase\Adapter;
 
 use Illuminate\Database\Connection;
-use guanhui07\SwooleDatabase\PDOConfig;
-use guanhui07\SwooleDatabase\Utils\Context;
+use Guanhui07\SwooleDatabase\PDOConfig;
+use Guanhui07\SwooleDatabase\Utils\Context;
 
 /**
  * Class Manager
- * @package guanhui07\SwooleDatabase\Adapter
+ * @package Guanhui07\SwooleDatabase\Adapter
   * @method static Expression raw($value)
  * @method static selectOne(string $query, array $bindings = [], bool $useReadPdo = true)
  * @method static array select(string $query, array $bindings = [], bool $useReadPdo = true)

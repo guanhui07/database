@@ -1,6 +1,6 @@
 <?php
 
-namespace guanhui07\SwooleDatabase;
+namespace Guanhui07\SwooleDatabase;
 
 use PDO;
 use Swoole\ConnectionPool;

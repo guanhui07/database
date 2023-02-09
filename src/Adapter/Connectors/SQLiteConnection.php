@@ -1,11 +1,11 @@
 <?php
 
 
-namespace guanhui07\SwooleDatabase\Adapter\Connectors;
+namespace Guanhui07\SwooleDatabase\Adapter\Connectors;
 
 /**
  * Class SQLiteConnection
- * @package guanhui07\SwooleDatabase\Adapter\Connectors
+ * @package Guanhui07\SwooleDatabase\Adapter\Connectors
  */
 class SQLiteConnection extends \Illuminate\Database\SQLiteConnection
 {
