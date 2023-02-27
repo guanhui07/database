@@ -3,7 +3,7 @@
 
 #### 1. 安装
 ```
-composer require guanhui07/database:dev-master
+composer require guanhui07/database
 ```
 #### 2. 创建`配置`实例
 ```php
