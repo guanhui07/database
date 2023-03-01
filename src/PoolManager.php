@@ -4,6 +4,10 @@
 namespace Guanhui07\SwooleDatabase;
 
 
+use Exception;
+use Guanhui07\SwooleDatabase\Utils\Context;
+use RuntimeException;
+
 /**
  * 连接池管理(全局)
  * Class PoolManager
@@ -17,12 +21,12 @@ class PoolManager
      * 新增连接池
      * @param int $size
      * @param string $name
-     * @throws \Exception
+     * @throws Exception
      */
-    public static function addPool($size = 64, $name = 'default')
+    public static function addPool($size = 64, $name = 'default'): void
     {
         if (isset(self::$pool[$name]) && self::$pool[$name] instanceof PDOPool) {
-            throw new \Exception('Pool Exist');
+            throw new RuntimeException('Pool Exist');
         }
         $config = PDOConfig::getConfig($name);
         self::$pool[$name] = $pool = new PDOPool($config, $size);
@@ -32,7 +36,7 @@ class PoolManager
      * 获取连接池
      * @param string $name
      * @return PDOPool
-     * @throws \Exception
+     * @throws Exception
      */
     public static function getPool($name = 'default')
     {
@@ -44,13 +48,13 @@ class PoolManager
 
     /**
      * 归还当前协程内的所有连接
-     * @throws \Exception
+     * @throws Exception
      */
     public static function recoveryConnection()
     {
-        $lists = \Guanhui07\SwooleDatabase\Utils\Context::get(\Guanhui07\SwooleDatabase\PoolManager::class . '_connection') === null ? [] : \Guanhui07\SwooleDatabase\Utils\Context::get(\Guanhui07\SwooleDatabase\PoolManager::class . '_connection');
+        $lists = Context::get(__CLASS__ . '_connection') === null ? [] : Context::get(PoolManager::class . '_connection');
         foreach ($lists as $item) {
-            \Guanhui07\SwooleDatabase\PoolManager::getPool($item['name'])->put($item['pdo']);
+            self::getPool($item['name'])->put($item['pdo']);
         }
     }
 }
