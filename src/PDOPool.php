@@ -14,7 +14,7 @@ use Swoole\Database\PDOProxy;
 class PDOPool extends ConnectionPool
 {
     /** @var int */
-    protected $size = 64;
+    protected int $size = 64;
 
     /** @var PDOConfig */
     protected $config;
